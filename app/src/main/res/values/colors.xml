@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="vino">#8B2D01</color>
+    <color name="naranjauno">#DC6900</color>
+    <color name="vinocafe">#964119</color>
+    <color name="naranjados">#DF8C3F</color>
+    <color name="naranjatres">#CD7104</color>
+    <color name="azuluno">#0097B2</color>
+    <color name="cafeuno">#7C521E</color>
+</resources>
