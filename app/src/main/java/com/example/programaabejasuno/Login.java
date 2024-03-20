@@ -1,12 +1,15 @@
 package com.example.programaabejasuno;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -24,6 +27,9 @@ public class Login extends AppCompatActivity  {
   Button btnRegresar;
 
   BasedeDatos bdus;
+
+  //SharedPreferences sharedPreferences;
+  //Context contexto;
 
 
 
@@ -57,8 +63,9 @@ public class Login extends AppCompatActivity  {
             public void onClick(View view) {
                boolean LoginId  = bdus.checharNomUsuarioInicioS(nomusa_.getText().toString(),pwd_.getText().toString());
                 if(LoginId){
-                    Intent intent = new Intent(Login.this, Home.class);
+                    Intent intent = new Intent(Login.this,SplashActivity.class);
                     startActivity(intent);
+
                 } else
                     Toast.makeText(Login.this, "Datos incorrectos", Toast.LENGTH_LONG).show();
             }

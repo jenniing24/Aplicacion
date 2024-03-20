@@ -3,14 +3,31 @@ package com.example.programaabejasuno;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 public class Home extends AppCompatActivity {
+
+    TextView txnomuserlog;
+
+    BasedeDatos bdus;
+
+    ImageView bvolver;
+    ImageView birhome;
+
+    Button bcam;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +39,37 @@ public class Home extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        bvolver=(ImageView) findViewById(R.id.btnvolver);
+        birhome=(ImageView) findViewById(R.id.bhome);
+        bcam=(Button) findViewById(R.id.btnBuscarCamara);
+
+
+        bvolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Home.this,Login.class));
+                finish();
+            }
+        });
+
+        birhome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Home.this,Home.class));
+                finish();
+            }
+        });
+
+        bcam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Home.this,EscogerCamara.class));
+                finish();
+            }
+        });
+
+
     }
 
 

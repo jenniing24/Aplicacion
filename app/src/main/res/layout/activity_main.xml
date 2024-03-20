@@ -73,6 +73,7 @@
         android:textSize="23sp"
         android:textColor="@color/textcolorbuttonmain"
         android:textStyle="bold"
+        android:onClick="iralogin"
         android:background="@drawable/selector_botonpresionar2"
         style="@android:style/Widget.Button"
         app:layout_constraintBottom_toBottomOf="parent"

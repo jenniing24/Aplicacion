@@ -3,7 +3,7 @@ package com.example.programaabejasuno;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,51 +11,38 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
-
-
-    Button btnIrLogin;
-    Button btnIrRegister;
+public class EscogerCamara extends AppCompatActivity {
+    ImageView birhome, bvolverh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_escoger_camara);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
+        birhome=(ImageView) findViewById(R.id.bhome);
+        bvolverh=(ImageView) findViewById(R.id.btnvolver);
 
-        btnIrLogin=findViewById(R.id.btnIraLogin);
-        btnIrRegister=findViewById(R.id.btnIrRegister);
-
-
-        btnIrLogin.setOnClickListener(new View.OnClickListener() {
+        birhome.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Login.class));
+            public void onClick(View view) {
+                startActivity(new Intent(EscogerCamara.this,Home.class));
                 finish();
             }
         });
 
-        btnIrRegister.setOnClickListener(new View.OnClickListener() {
+        bvolverh.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Register.class));
+            public void onClick(View view) {
+                startActivity(new Intent(EscogerCamara.this,Login.class));
                 finish();
             }
         });
 
     }
-
- public void iralogin(View v){
-     startActivity(new Intent(MainActivity.this,Login.class));
-     finish();
- }
-
-
-
 }
